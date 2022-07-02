@@ -1,0 +1,38 @@
+#root__notes {
+	position: absolute;
+	width: 100vw;
+	height: calc(100vh - 50px);
+	max-width: 100vw;
+	max-height: calc(100vh - 50px);
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: transform 0.3s ease-in-out;
+	display: flex;
+	flex-direction: column;
+}
+
+.notes__hidden {
+	transform: translateY(calc(-100vh - 50px));
+}
+
+#notes__title {
+	font-family: "Ring Bearer";
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#notes__details {
+	flex: 1;
+	display: flex;
+}
+
+#root__notes textarea {
+	background: #333;
+	border: 0;
+	margin: 0 0 1rem 0;
+	width: 100%;
+}
+
+#notes__toolbar {
+	text-align: center;
+	margin-bottom: 2rem;
+}

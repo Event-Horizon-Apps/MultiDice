@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../css/fa.min.css" />
+		<link rel="stylesheet" href="../css/utils/fonts.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/splash.css" />
+		<link rel="stylesheet" href="../css/appbar.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+		<link rel="stylesheet" href="../css/toolBar.css" />
+		<link rel="stylesheet" href="../css/settingsModal.css" />
+		<link rel="stylesheet" href="../css/playerPanel.css" />
+		<link rel="stylesheet" href="../css/characterSheet.css" />
+		<link rel="stylesheet" href="../css/notes.css" />
+		<link rel="stylesheet" href="../css/components/title.css" />
+		<link rel="stylesheet" href="../css/components/button.css" />
+		<link rel="stylesheet" href="../css/components/checkBox.css" />
+		<link rel="stylesheet" href="../css/components/diceResult.css" />
+		<link rel="stylesheet" href="../css/components/notification.css" />
+	</head>
+	<body style="background-color: black">
+		<%- include('appbar.ejs', {}); %> <%- include('splash.ejs', {}); %>
+		<h1 id="root__title">MultiDice</h1>
+		<%- include('login.ejs', {}); %><%- include('playerPanel.ejs', {}); %> <%- include('toolBar.ejs', {}); %> <%- include('settingsModal.ejs', {}); %><%- include('characterSheet.ejs', {}); %><%- include('notes.ejs', {}); %>
+		<script src="../js/utils/actionElement.js"></script>
+		<script src="../js/utils/displayNotification.js"></script>
+		<script src="../js/utils/characterSheet.js"></script>
+		<script src="../js/utils/notes.js"></script>
+		<script src="../js/index.js"></script>
+	</body>
+</html>

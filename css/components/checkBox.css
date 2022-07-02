@@ -1,0 +1,38 @@
+.checkBox {
+	width: auto;
+	display: inline-block;
+	margin: 20px;
+	position: relative;
+}
+
+.checkBox input {
+	display: none;
+}
+
+.checkBox h4 {
+	display: inline;
+	margin: 0;
+}
+
+.checkBox label {
+	border-radius: 100%;
+	margin: 0 30px 0 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	position: relative;
+	transition: all 0.3s;
+}
+.checkBox label:before {
+	display: none;
+}
+
+.checkBox label:hover {
+	box-shadow: 0 0 0 2px gold, inset 0 0 0 10px #333;
+}
+
+.checkBox input:checked + label {
+	background: gold;
+	box-shadow: 0 0 0 2px gold;
+}

@@ -1,0 +1,19 @@
+#login {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%);
+	transition: opacity 0.3s ease-in-out;
+}
+
+#login.hidden {
+	opacity: 0;
+}
+
+#login__pseudo {
+	width: 256px;
+}
+
+#login__submit {
+	margin-left: -5px !important;
+}

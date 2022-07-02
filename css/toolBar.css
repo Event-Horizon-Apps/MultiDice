@@ -1,0 +1,37 @@
+#root__toolBar {
+	position: absolute;
+	bottom: 0;
+	width: calc(100% - 2rem);
+	padding: 1rem;
+	display: flex;
+}
+
+#root__toolBar > i {
+	font-size: 2rem;
+	margin: 0 1rem 0 0;
+	cursor: pointer;
+}
+
+.toolBar__element {
+	position: relative;
+	bottom: 0.4rem;
+	transition: all 350ms ease-in-out;
+	height: 50px;
+}
+
+#toolBar__rollType {
+	display: flex;
+	margin-left: 3rem;
+}
+
+#toolBar__roll {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 3rem;
+}
+
+#toolBar__characterSheet {
+	position: relative;
+	bottom: 0.4rem;
+	margin: 0 3rem 0 0;
+}

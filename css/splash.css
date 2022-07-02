@@ -1,0 +1,27 @@
+#splash {
+	opacity: 1;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	text-align: center;
+	background-color: black;
+	z-index: 9999;
+}
+
+#splash > div {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#splash * {
+	font-family: Arial, Helvetica, sans-serif;
+}
+#splash h1 {
+	margin: 0;
+	font-size: 5rem;
+	transform: translateY(-100%);
+	color: white;
+}

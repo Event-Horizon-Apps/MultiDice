@@ -1,0 +1,127 @@
+#root__characterSheet {
+	position: absolute;
+	width: 100vw;
+	height: calc(100vh - 50px);
+	max-width: 100vw;
+	max-height: calc(100vh - 50px);
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: transform 0.3s ease-in-out;
+	display: flex;
+	flex-direction: column;
+}
+
+#root__characterSheet.readOnly input {
+	pointer-events: none;
+}
+
+#root__characterSheet.readOnly textarea {
+	pointer-events: none;
+}
+
+.characterSheet__hidden {
+	transform: translateY(calc(-100vh - 50px));
+}
+
+.characterSheet__readonly_hidden {
+	display: none;
+}
+
+#characterSheet__title {
+	font-family: "Ring Bearer";
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#characterSheet__player {
+	font-family: "Ring Bearer";
+	text-align: center;
+}
+
+#characterSheet__details {
+	flex: 1;
+	display: flex;
+}
+
+#characterSheet__details > div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	width: 33vw;
+}
+
+#characterSheet__details > div:nth-child(2) {
+	margin: 0 1rem;
+}
+
+#characterSheet__characteristics {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#characterSheet__characteristics label {
+	height: 50px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 0.5rem;
+}
+
+.characterSheet__characteristic {
+	display: flex;
+	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+	flex: 1;
+}
+
+#characterSheet__competences {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+#characterSheet__competences label {
+	height: 50px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 0.5rem;
+}
+
+.characterSheet__competence {
+	display: flex;
+	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+	flex: 1;
+}
+
+#characterSheet__spirale {
+	display: flex;
+	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+	flex: 1;
+}
+
+#characterSheet__spirale label {
+	height: 50px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 0.5rem;
+}
+
+#root__characterSheet input[type="number"] {
+	width: 30px;
+}
+
+#root__characterSheet textarea {
+	background: #333;
+	border: 0;
+	resize: vertical;
+	margin: 0 0 1rem 0;
+}
+
+#root__characterSheet h3 {
+	margin: 1rem 0 0 0;
+	font-family: "Ring Bearer";
+}
+
+#characterSheet__toolbar {
+	text-align: center;
+	margin-bottom: 2rem;
+}

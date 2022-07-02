@@ -1,0 +1,56 @@
+{
+  "name": "multidice",
+  "version": "2.0.0",
+  "description": "A 7th Sea utilitary program to play RPG online",
+
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+	"dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
+  "author": "Event Horizon - Théo Deloose <none@none.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-builder": "^23.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "dependencies": {
+    "ejs-electron": "^2.1.1",
+    "electron-settings": "^4.0.2",
+    "socket.io-client": "^4.4.1"
+  },
+  "build": {
+    "productName": "Multidice",
+    "appId": "fr.deloose.multidice",
+    "directories": {
+        "buildResources": "build"
+    },
+    "win": {
+        "asar": false,
+        "target": "nsis",
+        "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "build/256x256.ico",
+      "installerHeaderIcon": "build/256x256.ico",
+      "deleteAppDataOnUninstall": true
+    },
+	"linux": {
+		"category": "Games",
+		"icon": "build/256x256.png",
+		"target": [
+			"AppImage",
+			"pacman"
+		]
+	}
+}
+
+}

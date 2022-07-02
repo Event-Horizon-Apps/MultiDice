@@ -1,0 +1,62 @@
+#playerPanel {
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	width: 20%;
+	height: calc(100% - 50px);
+	top: 50px;
+	right: calc(-20% - 2rem);
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	transition: right 0.3s ease-in-out;
+}
+
+#playerPanel.visible {
+	right: 0;
+}
+
+#playerPanel__title {
+	text-align: center;
+	display: flex;
+}
+
+#playerPanel__title * {
+	font-family: "Ring Bearer";
+}
+
+#playerPanel__title > span:first-child {
+	flex: 1;
+}
+
+#playerPanel__title > span:last-child {
+	flex: 0;
+	font-size: 1rem;
+}
+
+#playerPanel__players > .player {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+#playerPanel__players {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#playerPanel__players > .player > input {
+	width: 10%;
+}
+
+#playerPanel__players > .player > span {
+	flex: 1;
+	margin-left: 0.5rem;
+	cursor: pointer;
+}
+
+.playerPanel__HP {
+	font-family: "Ring Bearer";
+	font-size: 1em;
+	flex: 0 !important;
+}

@@ -1,0 +1,18 @@
+button {
+	border: 0;
+	padding: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	background-color: #3498db;
+	margin: 0 !important;
+}
+button:disabled {
+	background-color: #333;
+	cursor: default;
+}
+button:hover {
+	background-color: #217dbb;
+}
+button:disabled:hover {
+	background-color: #333;
+}

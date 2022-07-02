@@ -1,0 +1,20 @@
+#root__title {
+	font-family: "Ring Bearer";
+	font-size: 5rem;
+	position: absolute;
+	left: 50%;
+	top: 33%;
+	transform: translateX(-50%);
+	transition: opacity 350ms linear, transform 350ms linear, left 350ms linear, top 350ms linear;
+}
+
+#root__title.hidden {
+	opacity: 0;
+}
+
+h1#root__title.small {
+	transform: scale(0.5);
+	transform-origin: left top;
+	left: 1.5rem;
+	top: 0;
+}

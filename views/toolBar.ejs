@@ -1,0 +1,22 @@
+<div id="root__toolBar">
+	<i id="toolBar__settings" class="fas fa-cog white bottomIcon" style="left: 1rem"></i>
+	<i id="toolBar__soundEffect" class="fas fa-volume-up white bottomIcon" style="left: 5rem"></i>
+	<div id="toolBar__rollType" class="bottomSlideHidden toolBar__element">
+		<select id="roll__rollType">
+			<option id="rollType__publicRoll" value="0" selected>Public</option>
+			<option id="rollType__privateRoll" value="1">Privé</option>
+			<option id="rollType__privateMJRoll" value="2">Privé avec MJ</option>
+		</select>
+	</div>
+	<div id="toolBar__roll" class="bottomSlideHidden toolBar__element">
+		<input id="roll__nbOfDice" placeholder="Nombre de dés" spellcheck="false" />
+		<button style="margin: 0" id="roll__submitRoll" class="actionElement" data-action="roll" data-action_parameters="#roll__nbOfDice/nbOfDice=value;#roll__nbOfFaces/nbOfFaces=value;#roll__rollType/rollType=value">D</button>
+		<input id="roll__nbOfFaces" placeholder="Nombre de faces" spellcheck="false" />
+	</div>
+	<div id="toolBar__characterSheet" class="bottomSlideHidden toolBar__element">
+		<button style="margin: 0" id="characterSheet_displayOwn" class="actionElement" value="0" data-action="loadCharacterSheet" data-action_parameters="#characterSheet_displayOwn/readOnly=value">Feuille de personnage</button>
+	</div>
+	<div id="toolBar__notes" class="bottomSlideHidden toolBar__element">
+		<button style="margin: 0" id="characterSheet_displayNotes" class="actionElement" value="0" data-action="loadNotes" data-action_parameters="">Bloc notes</button>
+	</div>
+</div>

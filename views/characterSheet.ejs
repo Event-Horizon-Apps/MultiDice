@@ -1,0 +1,57 @@
+<div id="root__characterSheet" class="characterSheet__hidden">
+	<h1 id="characterSheet__title">Feuille de personnage</h1>
+	<h2 id="characterSheet__player">test</h2>
+	<div id="characterSheet__details">
+		<div>
+			<h3>Vertues :</h3>
+			<textarea name="characterSheet__vertue" id="characterSheet__vertue"></textarea>
+			<h3>Travers :</h3>
+			<textarea name="characterSheet__travers" id="characterSheet__travers"></textarea>
+			<h3>Historiques :</h3>
+			<textarea name="characterSheet__historiques" id="characterSheet__historiques"></textarea>
+			<h3>Inventaire :</h3>
+			<textarea name="characterSheet__inventaire" id="characterSheet__inventaire"></textarea>
+		</div>
+		<div>
+			<h3>Characteristiques :</h3>
+			<div id="characterSheet__characteristics">
+				<div class="characterSheet__characteristic"><input name="characterSheet__force" placeholder="2" type="number" value="2" min="2" max="5" /><label for="characterSheet__force">Force</label></div>
+				<div class="characterSheet__characteristic"><input name="characterSheet__finesse" placeholder="2" type="number" value="2" min="2" max="5" /><label for="characterSheet__finesse">Finesse</label></div>
+				<div class="characterSheet__characteristic"><input name="characterSheet__resolution" placeholder="2" type="number" value="2" min="2" max="5" /><label for="characterSheet__resolution">Resolution</label></div>
+				<div class="characterSheet__characteristic"><input name="characterSheet__astuce" placeholder="2" type="number" value="2" min="2" max="5" /><label for="characterSheet__astuce">Astuce</label></div>
+				<div class="characterSheet__characteristic"><input name="characterSheet__panache" placeholder="2" type="number" value="2" min="2" max="5" /><label for="characterSheet__panache">Panache</label></div>
+			</div>
+			<h3>Compétences :</h3>
+			<div id="characterSheet__competences">
+				<div class="characterSheet__competence"><input name="characterSheet__blanches" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__blanches">Armes blanches</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__intimidation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__intimidation">Intimidation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__militaire" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__militaire">Arts militaires</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__navigation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__navigation">Navigation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__athletisme" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__athletisme">Athletisme</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__persuasion" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__persuasion">Persuasion</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__bagarre" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__bagarre">Bagarre</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__representation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__representation">Représentation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__dissimulation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__dissimulation">Dissimulation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__subornation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__subornation">Subornation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__empathie" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__empathie">Empathie</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__tir" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__tir">Tir</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__equitation" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__equitation">Equitation</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__vigilance" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__vigilance">Vigilance</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__erudition" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__erudition">Erudition</label></div>
+				<div class="characterSheet__competence"><input name="characterSheet__vol" placeholder="0" type="number" value="0" min="0" max="5" /><label for="characterSheet__vol">Vol</label></div>
+			</div>
+		</div>
+		<div>
+			<h3>Avantages :</h3>
+			<textarea name="characterSheet__avantages" id="characterSheet__avantages"></textarea>
+			<h3>Spirale de la mort</h3>
+			<div class="characterSheet__spirale"><input name="characterSheet__spirale" placeholder="2" type="number" value="0" min="0" max="20" /><label for="characterSheet__spirale">Blessures</label></div>
+			<h3>Corruption</h3>
+			<div class="characterSheet__corruption"><input name="characterSheet__corruption" placeholder="0" type="number" value="0" min="0" max="10" /><label for="characterSheet__corruption">Points de corruption</label></div>
+		</div>
+	</div>
+	<div id="characterSheet__toolbar">
+		<button id="characterSheet__close" onclick="saveCharacterSheet()">Fermer</button>
+		<span id="characterSheet__readOnly" class="characterSheet__readonly_hidden">(lecture seule)</span>
+	</div>
+</div>
