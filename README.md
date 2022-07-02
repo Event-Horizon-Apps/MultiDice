@@ -1,45 +1,49 @@
-# electron-quick-start
+# Multidice
 
-**Clone and run for a quick way to see Electron in action.**
+**Jouez au jeu de rôle 7e Mer avec vos amis à distance grâce à Multidice** **Pour utiliser ce logiciel il faut également installer "Multidice-Server" sur un serveur accessible depuis le web**
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start) within the Electron documentation.
+## Overview
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+![](screenshots/launch.png) ![](screenshots/dice.png) ![](screenshots/characterSheet.png) ![](screenshots/notes.png)
 
-A basic Electron application needs just these files:
+## Fonctionnalités
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+### Lancé de dés
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start).
+Multidice permet de faire des lancés de dés en choisissant le nombre de dés ainsi que le nombre de faces de ces derniers Ces lancés peuvent être public, privés ou visible uniquement par le lanceur et le MJ
 
-## To Use
+Les 6 derniers lancés de dés apparaissent à l'écran
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+### Gestion de la fiche de personnage
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
+Multidice permet de remplir et modifier sa fiche de personnage afin d'y accèder directement depuis l'application. Il est également possible de visualiser la fiche de personnage des autres joueurs du salon, sans pouvoir la modifier.
+
+### Bloc-note
+
+Multidice donne également la possibilité de stocker des informations relative au jeu sous forme d'un bloc-note accessible et modifiable depuis l'application
+
+## Build
+
+Pour build Multidice il faut [Electron Builder](https://www.electron.build/) Pour l'installer, executer depuis le dossier racine :
+
+```
+yarn add electron-builder --dev
 ```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+### Windows
 
-## Resources for Learning Electron
+```
+yarn build -w
+```
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+### Linux
+
+La configuration de build par défaut créé une AppImage et un fichier pacman
+
+```
+yarn build -l
+```
 
 ## License
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[MIT](LICENSE.md)
