@@ -1,6 +1,6 @@
 {
   "name": "multidice",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A 7th Sea utilitary program to play RPG online",
 
   "main": "main.js",
