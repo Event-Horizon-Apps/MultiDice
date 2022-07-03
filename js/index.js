@@ -13,12 +13,12 @@ ipc.on("setSettings", (e, parameters) => {
 });
 
 ipc.on("noServerSettings", () => {
-	displayNotification("Pas de serveur configuré", "#db3434");
+	displayNotification(i18n("No server configured"), "#db3434");
 	document.getElementById("login__submit").removeAttribute("disabled");
 });
 
 ipc.on("serverConnectError", (e, error) => {
-	displayNotification("Impossible de se connecter au serveur<br>Vérifier les paramètres<br>" + error, "#db3434");
+	displayNotification(i18n("Can't connect to server<br>Check the settings") + "<br>" + error, "#db3434");
 	document.getElementById("login__submit").removeAttribute("disabled");
 });
 
@@ -42,7 +42,7 @@ ipc.on("action", (e, arguments) => {
 			if (p.pseudo != settings.pseudo) addPlayer(p.pseudo, false);
 		}
 	} else if (arguments.action == "duplicatePlayer") {
-		displayNotification("A player with the same name<br>is already connected", "#db3434");
+		displayNotification(i18n("A player with the same name<br>is already connected"), "#db3434");
 		document.getElementById("login__submit").removeAttribute("disabled");
 	} else if (arguments.action == "newPlayer") {
 		addPlayer(arguments.pseudo, false);
@@ -64,6 +64,7 @@ ipc.on("action", (e, arguments) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+	translate();
 	setTimeout(() => {
 		ipc.send("frontendReady");
 		document.getElementById("splash__content").classList.remove("opacity_hidden");
@@ -107,7 +108,7 @@ function afterSplash() {
 		settings.serverAddress = document.getElementById("settingsModal__serverAddress").value;
 		settings.serverPort = document.getElementById("settingsModal__serverPort").value;
 		document.getElementById("settingsModal__modal").classList.remove("visible");
-		displayNotification("Settings saved!");
+		displayNotification(i18n("Settings saved"));
 		ipc.send("setSettings", settings);
 	});
 
@@ -121,7 +122,7 @@ function addPlayer(pseudo, editable) {
 	let playerContainer = document.getElementById("playerPanel__players");
 	let disabledBetInput = editable ? "" : "disabled";
 	let escapedPseudo = pseudo.replaceAll(" ", "-");
-	let isOwnPseudo = pseudo == settings.pseudo ? " (You)" : "";
+	let isOwnPseudo = pseudo == settings.pseudo ? " (" + i18n("You") + ")" : "";
 	let readOnly = pseudo == settings.pseudo ? 0 : 1;
 	playerContainer.innerHTML += "<div class='player' id='player-" + escapedPseudo + "'><span onclick='actionElement(event)' class='actionElement' data-readOnly='" + readOnly + "' data-action='loadCharacterSheet' data-action_parameters='pseudo=`" + pseudo + "`;readOnly=`" + readOnly + "`'>" + pseudo + isOwnPseudo + "</span><input oninput='setHeroicPoints(this)' type='number' min='0' value='1' id='player__bet-" + escapedPseudo + "' " + disabledBetInput + "></div>";
 }
@@ -157,7 +158,7 @@ function setRollQueue() {
 		rollResult.classList.add("hidden");
 		rollResult.id = "rollResult__title-" + nbOfRollsOnScreen;
 
-		rollResult.innerText = roll.pseudo + " jette " + roll.nbOfDice + "D" + roll.nbOfFaces;
+		rollResult.innerText = roll.pseudo + " " + i18n("rolls") + " " + roll.nbOfDice + "D" + roll.nbOfFaces;
 		document.body.appendChild(rollResult);
 
 		let rollResultDice = document.createElement("div");

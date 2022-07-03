@@ -4,11 +4,12 @@ const path = require("path");
 const ejse = require("ejs-electron");
 const io = require("socket.io-client");
 const localStorage = require("electron-settings");
-
+var i18n;
 let socket;
 let mainWindow;
 let adminWindow;
 
+app.commandLine.appendSwitch("lang", "fr");
 app.whenReady().then(() => {
 	mainWindow = new BrowserWindow({
 		titleBarStyle: "hidden",
@@ -24,6 +25,7 @@ app.whenReady().then(() => {
 	mainWindow.loadURL(`file://${__dirname}/views/index.ejs`);
 
 	mainWindow.once("ready-to-show", () => {
+		i18n = new (require("./i18n"))(app.getLocale());
 		mainWindow.show();
 	});
 });
@@ -49,6 +51,10 @@ ipcMain.on("frontendReady", (e) => {
 
 ipcMain.on("setSettings", (e, settings) => {
 	localStorage.setSync("settings", settings);
+});
+
+ipcMain.on("i18n", function (event, arg) {
+	event.returnValue = i18n.__(arg);
 });
 
 ipcMain.on("action", (e, parameters) => {
