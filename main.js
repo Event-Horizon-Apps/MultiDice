@@ -54,6 +54,9 @@ ipcMain.on("setSettings", (e, settings) => {
 });
 
 ipcMain.on("i18n", function (event, arg) {
+	while (i18n == undefined) {
+		i18n = new (require("./i18n"))(app.getLocale());
+	}
 	event.returnValue = i18n.__(arg);
 });
 
