@@ -1,6 +1,9 @@
 function displayCharacterSheet(sheet, readOnly, player) {
 	var characterSheet = document.getElementById("root__characterSheet");
-	characterSheet.classList.remove("characterSheet__hidden");
+	characterSheet.style.display = "flex";
+	setTimeout(() => {
+		characterSheet.classList.remove("characterSheet__hidden");
+	}, 1);
 	window.characterSheetReadOnly = readOnly;
 	if (readOnly == 1) {
 		document.getElementById("root__characterSheet").classList.add("readOnly");
@@ -58,7 +61,9 @@ function displayCharacterSheet(sheet, readOnly, player) {
 function saveCharacterSheet() {
 	var characterSheet = document.getElementById("root__characterSheet");
 	characterSheet.classList.add("characterSheet__hidden");
-
+	setTimeout(() => {
+		characterSheet.style.display = "none";
+	}, 400);
 	if (window.characterSheetReadOnly == 0) {
 		var parameters = {};
 		parameters.characterSheet = {};

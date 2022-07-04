@@ -14,6 +14,7 @@ app.whenReady().then(() => {
 	mainWindow = new BrowserWindow({
 		titleBarStyle: "hidden",
 		resizable: true,
+
 		frame: false,
 		webPreferences: {
 			nodeIntegration: true,
@@ -26,6 +27,7 @@ app.whenReady().then(() => {
 
 	mainWindow.once("ready-to-show", () => {
 		i18n = new (require("./i18n"))(app.getLocale());
+		mainWindow.maximize();
 		mainWindow.show();
 	});
 });
