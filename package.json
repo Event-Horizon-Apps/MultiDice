@@ -34,6 +34,7 @@
     "directories": {
       "buildResources": "build"
     },
+	"files": "!**/releases/**/*",
     "win": {
       "asar": false,
       "target": "nsis",
