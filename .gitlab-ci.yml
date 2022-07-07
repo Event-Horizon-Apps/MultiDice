@@ -1,7 +1,17 @@
 stages:
-  - web
-  
-web-ide:
-    stage: web
-    script: 
-        - sleep 60
+  - build
+
+build:
+  image: electronuserland/builder
+  stage: build
+  script:
+    - yarn
+    - yarn dist:win
+    - yarn dist:linux
+  artifacts:
+    expire_in: 30 days
+    paths:
+      - ./dist/
+  only:
+    - master
+

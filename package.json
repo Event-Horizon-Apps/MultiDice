@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist:win": "electron-builder -w",
+    "dist:linux": "electron-builder -l"
   },
   "repository": {
     "type": "git",

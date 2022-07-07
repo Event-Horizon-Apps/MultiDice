@@ -1,2 +1,3 @@
 terminal:
-    tags: "WebIDE"
+  image: electronuserland/builder
+  script: sleep 60
