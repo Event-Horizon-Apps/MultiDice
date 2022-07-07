@@ -1,34 +1,39 @@
 # Multidice
 
-**Jouez au jeu de rôle 7e Mer avec vos amis à distance grâce à Multidice**
+**Play 7th Sea RPG with your friends remotely with Multidice**
 
-#### **Pour utiliser ce logiciel il faut également installer "Multidice-Server" sur un serveur accessible depuis le web**
+#### **To use this software, you will need "Mutltidice-Server" on a server reachable from the web**
 
 ## Overview
 
 ![](screenshots/launch.png) ![](screenshots/dice.png) ![](screenshots/characterSheet.png) ![](screenshots/notes.png)
 
-## Fonctionnalités
+## Features
 
-### Lancé de dés
+### Dice rolling
 
-Multidice permet de faire des lancés de dés en choisissant le nombre de dés ainsi que le nombre de faces de ces derniers Ces lancés peuvent être public, privés ou visible uniquement par le lanceur et le MJ.
+Multidice allows to roll dice by choosing the number of dices and the number of their faces.
+The rolls can be public to all the players of the server, private or shared only with the GM.
 
-Les 6 derniers lancés de dés apparaissent à l'écran.
+A history of the last 6 rolls is displayed on the screen.
 
-### Gestion de la fiche de personnage
+### Character sheet managing
 
-Multidice permet de remplir et modifier sa fiche de personnage afin d'y accèder directement depuis l'application. Il est également possible de visualiser la fiche de personnage des autres joueurs du salon, sans pouvoir la modifier.
+With Multidice, you can fill in, access and modify your character sheet. You can also see the character sheet from the other connecter players in a read-only mode. 
 
-### Bloc-note
+### Notes
 
-Multidice donne également la possibilité de stocker des informations relative au jeu sous forme d'un bloc-note accessible et modifiable depuis l'application.
+Notes are also available with Multidice. That way you can enter all the useful information given by the GM
+
+### Game master (GM)
+
+At the current stage of development of Multidice, a player entering the server with the name "MJ" (GM in french) is considered to be the game master.
 
 ## Build
 
-Pour build Multidice il faut [Electron Builder](https://www.electron.build/).
+You will need [Electron Builder](https://www.electron.build/) to build Multidice.
 
-Pour l'installer, executer depuis le dossier racine :
+To install it, run the following from the root folder :
 
 ```
 yarn add electron-builder --dev
@@ -40,12 +45,25 @@ yarn add electron-builder --dev
 yarn build -w
 ```
 
+or
+
+```
+yarn build:win
+```
+
 ### Linux
 
-La configuration de build par défaut créé une AppImage et un fichier pacman.
+By default the "package.json" configuration for linux build a .pacman file and a .AppImage file.
+It is up to you to add another type of Linux package.
 
 ```
 yarn build -l
+```
+
+or
+
+```
+yarn build:linux
 ```
 
 ## License
