@@ -1,4 +1,4 @@
-# Multidice
+<h1><img src="img/256x256.png" alt="drawing" width="64"/> Multidice</h1>
 
 **Play 7th Sea RPG with your friends remotely with Multidice**
 
