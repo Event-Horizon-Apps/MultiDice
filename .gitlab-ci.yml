@@ -12,5 +12,5 @@ build:
     paths:
       - ./dist/
   only:
-    - master
+    - main
 
