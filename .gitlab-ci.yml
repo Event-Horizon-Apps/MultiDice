@@ -1,0 +1,70 @@
+stages:
+  - pack
+  - release
+
+pack:
+  stage: pack
+  only:
+    - web
+  before_script:
+    - echo GE_JOB_ID=$CI_JOB_ID >> pack.env
+    - mkdir .ci-build
+    - shopt -s extglob
+    - cp -r ./!(releases) .ci-build/
+    - cd .ci-build/
+  script:
+    - npm install --dev electron-builder
+    - rm -rf dist/*
+    - npm run dist:win -- --publish never
+    - npm run dist:linux -- --publish never
+    - rm -rf dist/*-unpacked
+    - rm -rf dist/*.blockmap
+    - rm -rf dist/*.yml
+    - mv dist ../packages
+    - ls -al ../packages
+    - cd ../packages
+    - echo $(sha256sum Multidice\ Setup\ ${VERSION}.exe) >> hashes
+    - echo $(sha256sum multidice-${VERSION}.pacman) >> hashes
+    - echo $(sha256sum Multidice-${VERSION}.AppImage) >> hashes
+  after_script: 
+    - cd ../
+    - rm -rf .ci-build
+  artifacts:
+    paths:
+      - packages/*.exe
+      - packages/*.AppImage
+      - packages/*.pacman
+      - packages/hashes
+    expire_in: never
+    reports:
+      dotenv: pack.env
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  needs:
+    - job: pack
+      artifacts: true
+  script:
+    - WIN=$(awk 'NR==1' packages/hashes)
+    - PAC=$(awk 'NR==2' packages/hashes)
+    - AI=$(awk 'NR==3' packages/hashes)
+    - echo "<h1>Version ${VERSION}</h1>${DESC}<br><h2>Available platforms</h2><ul><li>Windows</li><li>Arch linux</li><li>All platforms supporting AppImage</li><br><h2>SHA256 hashes</h2>${WIN}<br><br>${PAC}<br><br>${AI}" > description
+  release:
+    name: "$VERSION"
+    description: description
+    tag_name: "$VERSION"
+    ref: "$CI_COMMIT_SHA"
+    assets:
+      links:
+        - name: "Multidice Setup ${VERSION}.exe"
+          url: 'https://git.deloose.fr/event-horizon/MultiDice/-/jobs/${GE_JOB_ID}/artifacts/raw/packages/Multidice Setup ${VERSION}.exe'
+          link_type: 'package'
+        - name: "multidice-${VERSION}.pacman"
+          url: 'https://git.deloose.fr/event-horizon/MultiDice/-/jobs/${GE_JOB_ID}/artifacts/raw/packages/multidice-${VERSION}.pacman'
+          link_type: 'package'
+        - name: "Multidice-${VERSION}.AppImage"
+          url: 'https://git.deloose.fr/event-horizon/MultiDice/-/jobs/${GE_JOB_ID}/artifacts/raw/packages/Multidice-${VERSION}.AppImage'
+          link_type: 'package'
+  only:
+    - web
