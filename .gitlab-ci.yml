@@ -1,0 +1,7 @@
+stages:
+  - web
+  
+web-ide:
+    stage: web
+    script: 
+        - sleep 60
