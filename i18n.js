@@ -10,7 +10,7 @@ function i18n(locale) {
 	if (fs.existsSync(path.join(__dirname, "locales/" + locale + ".json"))) {
 		loadedLanguage = JSON.parse(fs.readFileSync(path.join(__dirname, "locales/" + locale + ".json"), "utf8"));
 	} else {
-		loadedLanguage = JSON.parse(fs.readFileSync(path.join(__dirname, "locales/en.json"), "utf8"));
+		loadedLanguage = JSON.parse("{}");
 	}
 }
 

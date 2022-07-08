@@ -6,5 +6,5 @@ function diceRollValidation(parameters) {
 	const nbOfFacesNumber = Number(nbOfFaces);
 
 	if (Number.isInteger(nbOfDiceNumber) && nbOfDiceNumber > 0 && Number.isInteger(nbOfFacesNumber) && nbOfFacesNumber > 0) return [true, ""];
-	return ["false", i18n("Number of dice and their faces must be a strictly positive integer")];
+	return ["false", i18n("Number of dice and their faces<br>must be strictly positive integers")];
 }
