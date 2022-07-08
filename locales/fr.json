@@ -53,5 +53,6 @@
 	"No server configured": "Pas de serveur configuré",
 	"Enter your character name (case sensitive)": "Entrer votre pseudo (sensible à la casse)",
 	"Settings saved": "Paramètres enregistrés",
-	"(read only)": "(lecture seule)"
+	"(read only)": "(lecture seule)",
+	"Number of dice and their faces<br>must be strictly positive integers": "Le nombre de dés et leurs faces doivent être<br>des entiers strictement positifs"
 }
