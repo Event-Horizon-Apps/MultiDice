@@ -1,8 +1,8 @@
 function actionElement(e) {
-	let el = e.target;
+	var el = e.target;
 	if (el.id == "login__submit") el.setAttribute("disabled", true);
-	let actionParameters = el.dataset["action_parameters"];
-	let parameters = {};
+	var actionParameters = el.dataset["action_parameters"];
+	var parameters = {};
 	parameters.action = el.dataset["action"];
 	for (let p of actionParameters.split(";")) {
 		let paramSplit = p.split("/");
@@ -27,6 +27,17 @@ function actionElement(e) {
 			parameters[propertyName] = eval(propertyValue);
 		}
 	}
-	console.log(parameters);
-	ipc.send("action", parameters);
+	let dataValidation = el.dataset["action_validation"];
+	console.log(el);
+	console.log(dataValidation);
+	if (dataValidation == null) {
+		ipc.send("action", parameters);
+	} else {
+		let validation = window[dataValidation](parameters);
+		if (validation[0] == true) {
+			ipc.send("action", parameters);
+		} else {
+			displayNotification(validation[1], "#db3434");
+		}
+	}
 }
